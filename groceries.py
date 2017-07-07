@@ -51,9 +51,13 @@ dpmnts=[]
 for x in range(len(products)):
     dpmnts.append(products[x]['department'])
 
-print("There are ",len(set(dpmnts))," unique departments.")
+print("There are ",len(set(dpmnts))," unique departments: ")
 
 #6. Print the name of each unique department.
+dpmnts=list(set(dpmnts))
+
+for dpmnt in dpmnts:
+    print(dpmnt)
 
 #7. Print in alphabetical order the name of each unique department.
 #8. Print in alphabetical order the name of each unique department, as well as the number of products associated with that department.
