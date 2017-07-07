@@ -22,9 +22,13 @@ products = [
     {"id":20, "name": "Pomegranate Cranberry & Aloe Vera Enrich Drink", "department": "beverages", "aisle": "juice nectars", "price": 4.25}
 ]
 
-print(products)
+#Print the number of products.
+print("There are "+str(len(products))+" items in the products dictionary.")
+#Print the name of each product.
+#Print in alphabetical order the name of each product.
+#Print in alphabetical order the name of each product, and include its price rounded to two decimal places.
 
-# code.interact(local=locals())
+#code.interact(local=locals())
 
 #def sort_by_product_name(product):
 #    return product['name']
