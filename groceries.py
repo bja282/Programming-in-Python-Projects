@@ -22,6 +22,8 @@ products = [
     {"id":20, "name": "Pomegranate Cranberry & Aloe Vera Enrich Drink", "department": "beverages", "aisle": "juice nectars", "price": 4.25}
 ]
 
+##CHECKPOINT 1
+
 #1. Print the number of products.
 print("There are "+str(len(products))+" items in the products dictionary: \n\n")
 #2. Print the name of each product.
@@ -41,4 +43,18 @@ products = sorted(products, key=sort_by_product_name)
 for product in products:
     print(product["name"].strip(), ' ${0:.2f}'.format(product["price"], 2))
 
+
+##CHECKPOINT 2
+print("\n\n")
+#5. Print the number of unique departments.
+dpmnts=[]
+for x in range(len(products)):
+    dpmnts.append(products[x]['department'])
+
+print("There are ",len(set(dpmnts))," unique departments.")
+
+#6. Print the name of each unique department.
+
+#7. Print in alphabetical order the name of each unique department.
+#8. Print in alphabetical order the name of each unique department, as well as the number of products associated with that department.
 #code.interact(local=locals())
