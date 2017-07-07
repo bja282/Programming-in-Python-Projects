@@ -33,11 +33,12 @@ print("There are "+str(len(products))+" items in the products dictionary: \n\n")
 
 def sort_by_product_name(product):
     return product['name']
+
 products = sorted(products, key=sort_by_product_name)
 
-for product in products:
-    print(product["name"])
-
 #4. Print in alphabetical order the name of each product, and include its price rounded to two decimal places.
+
+for product in products:
+    print(product["name"].strip(), ' ${0:.2f}'.format(product["price"], 2))
 
 #code.interact(local=locals())
