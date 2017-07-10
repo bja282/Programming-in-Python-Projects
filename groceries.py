@@ -41,17 +41,17 @@ products = sorted(products, key=sort_by_product_name)
 #4. Print in alphabetical order the name of each product, and include its price rounded to two decimal places.
 
 for product in products:
-    print(product["name"].strip(), ' ${0:.2f}'.format(product["price"], 2))
+    print(product["name"].strip(), ' (${0:.2f})'.format(product["price"], 2))
 
 
 ##CHECKPOINT 2
-print("\n\n")
+print("\n")
 #5. Print the number of unique departments.
 dpmnts=[]
 for x in range(len(products)):
     dpmnts.append(products[x]['department'])
 
-print("There are ",len(set(dpmnts))," unique departments: ")
+print("There are ",len(set(dpmnts))," departments: ")
 
 #6. Print the name of each unique department.
 dpmnts=list(set(dpmnts))
@@ -65,4 +65,10 @@ for dpmnt in dpmnts:
     print(dpmnt)
 
 #8. Print in alphabetical order the name of each unique department, as well as the number of products associated with that department.
-code.interact(local=locals())
+dpmnts_dict = {}
+dpmnts_dict['name']=''
+
+#for dpmnt in dpmnts:
+#    print(dpmnts)
+
+#code.interact(local=locals())
