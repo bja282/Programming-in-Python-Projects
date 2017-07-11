@@ -26,7 +26,7 @@ products = [
 
 #1. Print the number of products.
 print("--------------")
-print("There are ".upper()+str(len(products))+" items in the products dictionary:".upper())
+print("There are ".upper()+str(len(products))+" items:".upper())
 #2. Print the name of each product.
 
 #for product in products:
