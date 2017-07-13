@@ -73,5 +73,15 @@ print(running_total)
 # Steps:
 #
 # For each receipt component listed in the "Requirements" section above, (e.g. store name,
-# product prices, taxes, total price, farewell message, etc.), revise your program to print that component. 
+# product prices, taxes, total price, farewell message, etc.), revise your program to print that component.
 # Commit your code after implementing each component in the list.
+
+print('''-------------------------------
+Ben's Big Leaf Organic
+ -------------------------------
+Web: www.mystore.com
+Phone: 1.123.456.7890
+Checkout Time:''', datetime.datetime.now(),'''
+-------------------------------
+Shopping Cart Items:''',
+)
