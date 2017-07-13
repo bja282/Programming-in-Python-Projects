@@ -1,4 +1,5 @@
 import code
+import datetime
 
 #Groceries List
 products = [
@@ -51,10 +52,26 @@ print("SHOPPING CART ITEM IDENTIFIERS INCLUDE:", product_ids)
 ##TODO: perform product look-ups here!
 # Steps:
 #
-#     For a single valid product identifier, look up the matching product and print its name and price.
-#     Hint: try using a custom function in conjunction with a list comprehension.
-#     For each valid product identifier in the example list, look up the matching product and print its name and price.
-#     For each valid product identifier in the example list, look up the matching product and print its name and price, and add its price to a running-total of all prices, then print the running-total after iterating through the entire list. For now, you don't necessarily need to worry about formatting prices as USD.
+#     1. For a single valid product identifier, look up the matching product and print its name and price.
+#               Hint: try using a custom function in conjunction with a list comprehension.
+#     2. For each valid product identifier in the example list, look up the matching product and print its name and price.
+#     3. For each valid product identifier in the example list, look up the matching product and print its name and price,
+#           and add its price to a running-total of all prices, then print the running-total after iterating through the entire list.
+#           -- For now, you don't necessarily need to worry about formatting prices as USD.
+
+running_total = 0
 
 for x in product_ids:
+    print("Running Cost of Items: " + str(running_total))
     print(products[x-1]["id"], products[x-1]["name"], '(${0:.2f})'.format(products[x-1]["price"], 2))
+    running_total += products[x-1]["price"]
+
+print(running_total)
+
+# Checkpoint III - Receipt Printing
+#
+# Steps:
+#
+# For each receipt component listed in the "Requirements" section above, (e.g. store name,
+# product prices, taxes, total price, farewell message, etc.), revise your program to print that component. 
+# Commit your code after implementing each component in the list.
