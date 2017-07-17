@@ -1,5 +1,6 @@
 import code
 import datetime
+import time
 
 #Groceries List
 products = [
@@ -31,23 +32,17 @@ products = [
     # One at a time, iteratively accept a user input value, store it in a variable, and print it. But stop the loop if the user inputs the word "DONE". Hint: use an if statement in conjunction with the break keyword.
     # Repeat the previous step, but instead of printing each user input, store them all in a single list. Then print the list after the user is "DONE".
 
-#RETURN TO THIS!!!!!
-# x = 0
-# items=[]
-# while x == 0:
-#     prompt = input("Please input a product identifier, or 'DONE' if there are no more items:")
-#     if prompt != "DONE":
-#         items.append(prompt)
-#     elif prompt == "DONE":
-#         x+=1
-#         print(items)
-#         break
+x = 0
+product_ids=[]
+while x == 0:
+    prompt = input("Please input a product identifier, or 'DONE' if there are no more items:")
+    if prompt != "DONE":
+        product_ids.append(int(prompt))
+    elif prompt == "DONE":
+        x+=1
+        break
 
 ######### CHECKPOINT 2 ##########
-
-product_ids = [1, 8, 6, 16, 6] # temporary list of valid ids for testing purposes
-
-print("SHOPPING CART ITEM IDENTIFIERS INCLUDE:", product_ids)
 
 ##TODO: perform product look-ups here!
 # Steps:
@@ -59,14 +54,6 @@ print("SHOPPING CART ITEM IDENTIFIERS INCLUDE:", product_ids)
 #           and add its price to a running-total of all prices, then print the running-total after iterating through the entire list.
 #           -- For now, you don't necessarily need to worry about formatting prices as USD.
 
-running_total = 0
-
-for x in product_ids:
-    print("Running Cost of Items: " + str(running_total))
-    print(products[x-1]["id"], products[x-1]["name"], '(${0:.2f})'.format(products[x-1]["price"], 2))
-    running_total += products[x-1]["price"]
-
-print(running_total)
 
 # Checkpoint III - Receipt Printing
 #
@@ -79,9 +66,25 @@ print(running_total)
 print('''-------------------------------
 Ben's Big Leaf Organic
  -------------------------------
-Web: www.mystore.com
-Phone: 1.123.456.7890
-Checkout Time:''', datetime.datetime.now(),'''
+Web: www.bensbigleaforganic.com
+Phone: 1.212.543.6789
+Checkout Time:''', time.strftime("%m/%d/%Y"), time.strftime("%I:%M"),'''
 -------------------------------
-Shopping Cart Items:''',
+Shopping Cart Items:\n''')
+
+running_total = 0
+
+for x in product_ids:
+    print("+ ", products[x-1]["name"], '(${0:.2f})'.format(products[x-1]["price"], 2))
+    running_total += products[x-1]["price"]
+
+
+print('''
+-------------------------------
+Subtotal: $''', round(running_total, 2),'''
+Plus NYC Sales Tax (8.875%): ''', round(running_total*.08875, 2),
+'''\nTotal: $''', round(running_total+(running_total*.08875), 2),'''
+-------------------------------
+Thanks for your business! Please come again.
+'''
 )
