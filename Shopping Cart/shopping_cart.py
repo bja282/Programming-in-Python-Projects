@@ -38,7 +38,6 @@ while x == 0:
     prompt = input("Please input a product identifier, or 'DONE' if there are no more items:")
     try:
         if prompt.upper() == "DONE":
-            #x+=1
             break
         elif prompt != "DONE":
             if int(prompt)>20 or int(prompt)<1:
@@ -48,29 +47,7 @@ while x == 0:
     except ValueError:
         print("Sorry, that input doesn't seem correct. Try again!")
 
-
-
-######### CHECKPOINT 2 ##########
-
-##TODO: perform product look-ups here!
-# Steps:
-#
-#     1. For a single valid product identifier, look up the matching product and print its name and price.
-#               Hint: try using a custom function in conjunction with a list comprehension.
-#     2. For each valid product identifier in the example list, look up the matching product and print its name and price.
-#     3. For each valid product identifier in the example list, look up the matching product and print its name and price,
-#           and add its price to a running-total of all prices, then print the running-total after iterating through the entire list.
-#           -- For now, you don't necessarily need to worry about formatting prices as USD.
-
-
-# Checkpoint III - Receipt Printing
-#
-# Steps:
-#
-# For each receipt component listed in the "Requirements" section above, (e.g. store name,
-# product prices, taxes, total price, farewell message, etc.), revise your program to print that component.
-# Commit your code after implementing each component in the list.
-
+# Receipt Printing
 print('''-------------------------------
 Ben's Big Leaf Organic
  -------------------------------
@@ -85,7 +62,6 @@ running_total = 0
 for x in product_ids:
     print("+ ", products[x-1]["name"], '(${0:.2f})'.format(products[x-1]["price"], 2))
     running_total += products[x-1]["price"]
-
 
 print('''
 -------------------------------
