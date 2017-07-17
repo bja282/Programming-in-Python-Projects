@@ -36,11 +36,19 @@ x = 0
 product_ids=[]
 while x == 0:
     prompt = input("Please input a product identifier, or 'DONE' if there are no more items:")
-    if prompt != "DONE":
-        product_ids.append(int(prompt))
-    elif prompt == "DONE":
-        x+=1
-        break
+    try:
+        if prompt.upper() == "DONE":
+            #x+=1
+            break
+        elif prompt != "DONE":
+            if int(prompt)>20 or int(prompt)<1:
+                prompt = input("Sorry, that ID is incorrect. Please try again!")
+            else: product_ids.append(int(prompt))
+
+    except ValueError:
+        print("Sorry, that input doesn't seem correct. Try again!")
+
+
 
 ######### CHECKPOINT 2 ##########
 
@@ -82,7 +90,7 @@ for x in product_ids:
 print('''
 -------------------------------
 Subtotal: $''', round(running_total, 2),'''
-Plus NYC Sales Tax (8.875%): ''', round(running_total*.08875, 2),
+Plus NYC Sales Tax (8.875%): $''', round(running_total*.08875, 2),
 '''\nTotal: $''', round(running_total+(running_total*.08875), 2),'''
 -------------------------------
 Thanks for your business! Please come again.
